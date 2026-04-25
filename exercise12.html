@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- ฟังก์ชันคำนวณ ---
+    function calculateBMI(weight, height) {
+        let bmi = weight / (height * height);
+        return bmi;
+    }
+
+    // --- ส่วนการดึงค่าจาก URL ด้วย JavaScript (แทน PHP GET) ---
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // ดึงค่า weight และ height จาก URL (ถ้าไม่มีให้ใช้ค่า default)
+    let myWeight = parseFloat(urlParams.get('weight')) || 70;
+    let myHeight_cm = parseFloat(urlParams.get('height')) || 175;
+    let myHeight_m = myHeight_cm / 100.0;
+
+    // --- ประมวลผลและสร้าง Output ---
+    var strOUTPUT = "--- โปรแกรมคำนวณ BMI (JS GET Method) ---<br>";
+    
+    // ตรวจสอบความถูกต้องของข้อมูล
+    if (isNaN(myWeight) || isNaN(myHeight_cm) || myHeight_cm === 0) {
+        strOUTPUT += "<span style='color:red;'>ข้อมูลไม่ถูกต้อง! กรุณาตรวจสอบ URL</span>";
+    } else {
+        let result = calculateBMI(myWeight, myHeight_m);
+
+        strOUTPUT += `🏋️‍♂️ น้ำหนัก: ${myWeight.toFixed(2)} kg<br>`;
+        strOUTPUT += `📏 ส่วนสูง: ${myHeight_cm.toFixed(2)} cm<br>`;
+        strOUTPUT += `ค่า BMI ของคุณคือ: <strong>${result.toFixed(2)}</strong><br>`;
+
+        if (result < 18.5) {
+            strOUTPUT += "สถานะ: น้ำหนักน้อยเกินไป<br>";
+        } else if (result >= 18.5 && result <= 24.9) {
+            strOUTPUT += "สถานะ: น้ำหนักปกติ (สุขภาพดี)<br>";
+        } else {
+            strOUTPUT += "สถานะ: น้ำหนักเกิน/อ้วน<br>";
+        }
+    }
+
+    strOUTPUT += "<br><small style='font-size: 20px;'>*ลองพิมพ์เติมท้าย URL เช่น: ?weight=80&height=180</small>";
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // แสดงใน Console เพื่อตรวจสอบ
+    console.log("Weight from URL:", myWeight);
+    console.log("Height from URL:", myHeight_cm);
+    </script>
+
+</body>
+</html>

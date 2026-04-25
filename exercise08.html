@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- กำหนดค่าข้อมูล ---
+    let temp = 38;
+    let status = "";
+
+    // --- ตรรกะการตรวจสอบเงื่อนไข ---
+    if (temp < 20 || temp > 35) {
+        status = "Danger: Air conditioner needed!";
+    } else {
+        status = "Temperature OK";
+    }
+
+    // --- ส่วนการสร้าง Output สำหรับแสดงผลในหน้าเว็บ ---
+    var strOUTPUT = "--- ระบบตรวจจับอุณหภูมิ ---<br>";
+    strOUTPUT += `อุณหภูมิปัจจุบัน: ${temp}°C<br>`;
+    strOUTPUT += `สถานะ: ${status}<br>`;
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // --- ส่วนการแสดงผลใน Console ---
+    console.log(`Temperature: ${temp}`);
+    if (temp < 20 || temp > 35) {
+        console.log("Danger: Air conditioner needed!");
+    } else {
+        console.log("Temperature OK");
+    }
+    </script>
+
+</body>
+</html>

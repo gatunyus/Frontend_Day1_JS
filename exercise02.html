@@ -1,0 +1,33 @@
+<html>
+<meta charset="UTF-8">
+<style>body {
+    font-size: 30px; 
+    line-height: 1.5; 
+    font-family: sans-serif; 
+}</style>
+    <div id="output">
+    </div>
+<script>
+// คำนวณหา ชั่วโมง, นาที, และวินาทีที่เหลือ
+// ใช้ Math.floor() เพื่อปัดเศษทิ้ง (จำลองพฤติกรรม Integer division ของ C)
+var totalSeconds = 10000; 
+let hours = Math.floor(totalSeconds / 3600);
+let remainingAfterHours = totalSeconds % 3600;
+let minutes = Math.floor(remainingAfterHours / 60);
+let seconds = remainingAfterHours % 60;
+
+
+console.log("--- System Uptime ---");
+console.log(`Total Seconds: ${totalSeconds}`);
+console.log(`Format (HH:MM:SS) -> ${hours}h : ${minutes}m : ${seconds}s`);
+
+var strOUTPUT = "--- System Uptime ---<br>";
+strOUTPUT += `Total Seconds: ${totalSeconds}<br>`;
+strOUTPUT += `Format (HH:MM:SS) -> ${hours}h : ${minutes}m : ${seconds}s`;
+document.getElementById("output").innerHTML=strOUTPUT;
+
+</script>
+</html>
+
+
+

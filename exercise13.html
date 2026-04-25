@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- ฟังก์ชันคำนวณพื้นที่ (แบบ Arrow Function) ---
+    const calculateArea = (width, length) => {
+        return width * length;
+    };
+
+    // --- ส่วนการดึงค่าจาก URL ด้วย JavaScript (GET Method) ---
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // ดึงค่า width และ length จาก URL (ถ้าไม่มีข้อมูลให้ใช้ค่า default เป็น 0)
+    let w = parseFloat(urlParams.get('width')) || 5;
+    let l = parseFloat(urlParams.get('length')) || 6;
+
+    // --- ประมวลผลและสร้าง Output สำหรับแสดงผลหน้าเว็บ ---
+    var strOUTPUT = "--- โปรแกรมคำนวณพื้นที่ (JS GET Method) ---<br>";
+    
+    // ตรวจสอบความถูกต้องของข้อมูล
+    if (isNaN(w) || isNaN(l)) {
+        strOUTPUT += "<span style='color:red;'>ข้อมูลไม่ถูกต้อง! กรุณาตรวจสอบตัวเลขใน URL</span><br>";
+    } else {
+        let totalArea = calculateArea(w, l);
+
+        strOUTPUT += `📏 ความกว้าง: ${w} หน่วย<br>`;
+        strOUTPUT += `📐 ความยาว: ${l} หน่วย<br>`;
+        strOUTPUT += `⬜️ พื้นที่สี่เหลี่ยมคือ: <strong>${totalArea.toLocaleString()}</strong> ตารางหน่วย<br>`;
+    }
+
+    strOUTPUT += "<br><small style='font-size: 20px;'>*วิธีใช้: เติม ?width=10&length=20 ที่ท้าย URL</small><br>";
+    strOUTPUT += "--- จบการทำงาน ---";
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // --- ส่วนการแสดงผลใน Console ---
+    console.log("--- Area Calculation ---");
+    console.log("Width:", w);
+    console.log("Length:", l);
+    console.log("Total Area:", w * l);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif; /* เพิ่มเพื่อให้ตัวอักษรไทยอ่านง่ายขึ้น */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- กำหนดค่าตัวแปร ---
+    let myBool = true;
+    let myString = 'A';
+    let myInt = 32000;
+
+    // --- ส่วนการสร้าง Output สำหรับแสดงผลในหน้าเว็บ ---
+    var strOUTPUT = "--- สำรวจชนิดข้อมูลใน JavaScript ---<br>";
+    strOUTPUT += `1. myBool เป็นชนิด: ${typeof myBool}<br>`;
+    strOUTPUT += `2. myString เป็นชนิด: ${typeof myString} (ความยาว ${myString.length} ตัวอักษร)<br>`;
+    strOUTPUT += `3. myInt เป็นชนิด: ${typeof myInt} (ใน JS ตัวเลขทุกตัวเป็น Number)<br>`;
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // --- ส่วนการแสดงผลใน Console ---
+    console.log("--- สำรวจชนิดข้อมูลใน JavaScript ---");
+    console.log(`1. myBool เป็นชนิด: ${typeof myBool}`);
+    console.log(`2. myString เป็นชนิด: ${typeof myString} (ความยาว ${myString.length} ตัวอักษร)`);
+    console.log(`3. myInt เป็นชนิด: ${typeof myInt}`); 
+    </script>
+
+</body>
+</html>

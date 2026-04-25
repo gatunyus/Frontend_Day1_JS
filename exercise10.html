@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    var strOUTPUT = "";
+
+    // --- For Loop ---
+    strOUTPUT += "--- For Loop ---<br>";
+    console.log("--- For Loop ---");
+    for (let i = 3; i > 0; i--) {
+        strOUTPUT += i + "<br>";
+        console.log(i);
+    }
+
+    strOUTPUT += "<br>"; // เว้นวรรคระหว่าง Loop
+
+    // --- While Loop ---
+    strOUTPUT += "--- While Loop ---<br>";
+    console.log("--- While Loop ---");
+    let count = 3;
+    while (count > 0) {
+        strOUTPUT += count + "<br>";
+        console.log(count);
+        count--;
+    }
+    
+    strOUTPUT += "<strong>Go!</strong>";
+    console.log("Go!");
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+    </script>
+
+</body>
+</html>

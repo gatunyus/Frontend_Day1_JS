@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    let mae = 2;
+    var strOUTPUT = "";
+
+    // --- แม่สูตรคูณด้วย For Loop ---
+    strOUTPUT += `--- แม่ ${mae} For Loop ---<br>`;
+    console.log(`--- แม่ ${mae} Loop ---`);
+    for (let i = 1; i <= 12; i++) {
+        strOUTPUT += `${mae} x ${i} = ${mae * i}<br>`;
+        console.log(`${mae} x ${i} = ${mae * i}`);
+    }
+
+    strOUTPUT += "<br>"; // เว้นวรรคระหว่างส่วน
+
+    // --- แม่สูตรคูณด้วย While Loop ---
+    strOUTPUT += `--- แม่ ${mae} While Loop ---<br>`;
+    console.log(`--- แม่ ${mae} While---`);
+    let j = 1; // ใช้ตัวแปร j เพื่อไม่ให้ซ้ำกับ i ใน For Loop ด้านบน
+    while (j <= 12) {
+        strOUTPUT += `${mae} x ${j} = ${mae * j}<br>`;
+        console.log(`${mae} x ${j} = ${mae * j}`);
+        j++;
+    }
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+    </script>
+
+</body>
+</html>

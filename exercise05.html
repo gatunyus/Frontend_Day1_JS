@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- กำหนดค่าและประมวลผล ---
+    let numA = 10;
+    let numB = 3;
+
+    // ใน JS การหารจะได้เป็นทศนิยมอัตโนมัติ หากต้องการจำลองแบบ C ต้องใช้ Math.trunc() หรือ Math.floor()
+    let result1 = Math.trunc(numA / numB); // แบบตัดทศนิยมทิ้ง (เหมือน Integer Division)
+    let result2 = numA / numB;             // แบบหารปกติ (ได้ทศนิยมแบบ Float)
+
+    // --- ส่วนการสร้าง Output สำหรับแสดงผลในหน้าเว็บ ---
+    var strOUTPUT = "--- การหารตัวเลข (Type Casting) ---<br>";
+    strOUTPUT += `โจทย์: ${numA} หาร ${numB}<br>`;
+    strOUTPUT += `ผลลัพธ์แบบที่ 1 (จำลอง int ของ C): ${result1.toFixed(2)}<br>`;
+    strOUTPUT += `ผลลัพธ์แบบที่ 2 (ได้ทศนิยมแบบ Float): ${result2.toFixed(2)}<br>`;
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // --- ส่วนการแสดงผลใน Console ---
+    console.log("--- การหารตัวเลข (Type Casting) ---");
+    console.log(`โจทย์: ${numA} หาร ${numB}`);
+    console.log(`ผลลัพธ์แบบที่ 1 (จำลอง int ของ C): ${result1.toFixed(2)}`);
+    console.log(`ผลลัพธ์แบบที่ 2 (ได้ทศนิยมแบบ Float): ${result2.toFixed(2)}`);
+    </script>
+
+</body>
+</html>

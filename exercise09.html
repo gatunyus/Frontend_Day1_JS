@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- กำหนดค่าข้อมูล ---
+    let isDoorOpen = false;
+    let isWindowOpen = true;
+    let statusMessage = "";
+
+    // --- ตรรกะการตรวจสอบระบบความปลอดภัย ---
+    // !(isDoorOpen || isWindowOpen) หมายถึง ถ้าไม่ได้เปิดทั้งประตูและหน้าต่าง (คือปิดสนิททั้งคู่)
+    if (!(isDoorOpen || isWindowOpen)) {
+        statusMessage = "System: ALL LOCKED. Safe to leave.";
+    } else {
+        statusMessage = "System: WARNING! Cannot lock. Check doors/windows.";
+    }
+
+    // --- ส่วนการสร้าง Output สำหรับแสดงผลในหน้าเว็บ ---
+    var strOUTPUT = "--- Security Lock System ---<br>";
+    strOUTPUT += `Door Open: ${isDoorOpen}<br>`;
+    strOUTPUT += `Window Open: ${isWindowOpen}<br>`;
+    strOUTPUT += `<strong>${statusMessage}</strong><br>`;
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // --- ส่วนการแสดงผลใน Console ---
+    console.log("--- Security Lock System ---");
+    if (!(isDoorOpen || isWindowOpen)) {
+        console.log("System: ALL LOCKED. Safe to leave.");
+    } else {
+        console.log("System: WARNING! Cannot lock. Check doors/windows.");
+    }
+    </script>
+
+</body>
+</html>

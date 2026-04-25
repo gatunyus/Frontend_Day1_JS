@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- กำหนดค่าและประมวลผล ---
+    let rawData1 = "125";
+    let rawData2 = "36.75";
+
+    // แปลง String เป็น Int และ Float
+    let parsedInt = parseInt(rawData1);
+    let parsedFloat = parseFloat(rawData2);
+
+    // --- ส่วนการสร้าง Output สำหรับแสดงผลในหน้าเว็บ ---
+    var strOUTPUT = "--- ทดสอบการแปลงข้อความเป็นตัวเลข ---<br>";
+    strOUTPUT += `ข้อมูลดิบ 1 (String): ${rawData1}<br>`;
+    strOUTPUT += `แปลงเป็น Int แล้วลองบวก 10: ${parsedInt + 10}<br>`;
+    strOUTPUT += "-----------------------------------<br>";
+    strOUTPUT += `ข้อมูลดิบ 2 (String): ${rawData2}<br>`;
+    strOUTPUT += `แปลงเป็น Float แล้วลองบวก 1.5: ${parsedFloat + 1.5}<br>`;
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // --- ส่วนการแสดงผลใน Console ---
+    console.log("--- ทดสอบการแปลงข้อความเป็นตัวเลข ---");
+    console.log(`ข้อมูลดิบ 1 (String): ${rawData1}`);
+    console.log(`แปลงเป็น Int แล้วลองบวก 10: ${parsedInt + 10}`);
+    console.log("-----------------------------------");
+    console.log(`ข้อมูลดิบ 2 (String): ${rawData2}`);
+    console.log(`แปลงเป็น Float แล้วลองบวก 1.5: ${parsedFloat + 1.5}`);
+    </script>
+
+</body>
+</html>

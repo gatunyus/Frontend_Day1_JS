@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- ส่วนประมวลผลข้อมูล ---
+    let myAge = 25;              
+    let bigNumber = 1500000;     
+    let ledPin = 13;             
+    let myWeight = 65.5;         
+    const precisePi = 3.14159;   
+    let myGrade = 'A';           
+    let myName = "JS Developer"; 
+    let isReady = true;          
+
+    // --- ส่วนการสร้าง Output สำหรับแสดงผล ---
+    var strOUTPUT = "--- เริ่มการทดสอบตัวแปร ---<br>";
+    strOUTPUT += `1. ชื่อของฉันคือ (String): ${myName}<br>`;
+    strOUTPUT += `2. อายุ (Number): ${myAge}<br>`;
+    strOUTPUT += `3. น้ำหนัก (Number): ${myWeight}<br>`;
+    strOUTPUT += `4. เกรดที่ได้ (String): ${myGrade}<br>`;
+    strOUTPUT += `5. ขาพิน LED (Number): ${ledPin}<br>`;
+    strOUTPUT += `6. ค่า Pi (Number): ${precisePi}<br>`;
+    strOUTPUT += `7. ตัวเลขขนาดใหญ่ (Number): ${bigNumber}<br>`;
+    strOUTPUT += `8. สถานะความพร้อม (Boolean): ${isReady ? 1 : 0}<br>`;
+    strOUTPUT += "--------------------------";
+
+    // แสดงผลออกทางหน้าจอ
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // แสดงผลใน Console ด้วย
+    console.log("--- เริ่มการทดสอบตัวแปร ---");
+    console.log(`1. ชื่อของฉันคือ (String): ${myName}`);
+    console.log(`2. อายุ (Number): ${myAge}`);
+    console.log(`3. น้ำหนัก (Number): ${myWeight}`);
+    console.log(`4. เกรดที่ได้ (String): ${myGrade}`);
+    console.log(`5. ขาพิน LED (Number): ${ledPin}`);
+    console.log(`6. ค่า Pi (Number): ${precisePi}`);
+    console.log(`7. ตัวเลขขนาดใหญ่ (Number): ${bigNumber}`);
+    console.log(`8. สถานะความพร้อม (Boolean): ${isReady ? 1 : 0}`);
+    console.log("--------------------------");
+    </script>
+</body>
+</html>

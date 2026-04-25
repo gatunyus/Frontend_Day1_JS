@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- กำหนดค่าข้อมูล ---
+    let colorCode = 255;
+    let myPi = 3.14159265;
+
+    // --- ส่วนการสร้าง Output สำหรับแสดงผลในหน้าเว็บ ---
+    var strOUTPUT = "--- ลูกเล่นการแสดงผล (Print Formatting) ---<br>";
+    strOUTPUT += "[ ทดสอบเลขฐาน ]<br>";
+    strOUTPUT += `แบบฐานสิบ (DEC): ${colorCode.toString(10)}<br>`;
+    strOUTPUT += `แบบฐานสิบหก (HEX): ${colorCode.toString(16).toUpperCase()}<br>`;
+    strOUTPUT += `แบบฐานสอง (BIN): ${colorCode.toString(2)}<br>`;
+
+    strOUTPUT += "<br>[ ทดสอบจุดทศนิยม ]<br>";
+    strOUTPUT += `ปริ้นแบบปกติ (Default): ${myPi}<br>`;
+    strOUTPUT += `ปริ้น 1 ตำแหน่ง: ${myPi.toFixed(1)}<br>`;
+    strOUTPUT += `ปริ้น 4 ตำแหน่ง: ${myPi.toFixed(4)}<br>`;
+    strOUTPUT += `ปริ้น 6 ตำแหน่ง: ${myPi.toFixed(6)}<br>`;
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // --- ส่วนการแสดงผลใน Console ---
+    console.log("--- ลูกเล่นการแสดงผล (Print Formatting) ---");
+    console.log("[ ทดสอบเลขฐาน ]");
+    console.log(`แบบฐานสิบ (DEC): ${colorCode.toString(10)}`);
+    console.log(`แบบฐานสิบหก (HEX): ${colorCode.toString(16).toUpperCase()}`);
+    console.log(`แบบฐานสอง (BIN): ${colorCode.toString(2)}`);
+
+    console.log("\n[ ทดสอบจุดทศนิยม ]");
+    console.log(`ปริ้นแบบปกติ (Default): ${myPi}`);
+    console.log(`ปริ้น 1 ตำแหน่ง: ${myPi.toFixed(1)}`);
+    console.log(`ปริ้น 4 ตำแหน่ง: ${myPi.toFixed(4)}`);
+    console.log(`ปริ้น 6 ตำแหน่ง: ${myPi.toFixed(6)}`);
+    </script>
+
+</body>
+</html>

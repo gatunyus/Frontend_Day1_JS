@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-size: 30px; 
+            line-height: 1.5; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    // --- กำหนดค่าข้อมูล ---
+    let score = 75;
+    let grade = "";
+
+    // --- ตรรกะการตรวจสอบเงื่อนไข (If-Else) ---
+    if (score >= 80) {
+        grade = "A";
+    } else if (score >= 70 && score < 80) {
+        grade = "B";
+    } else {
+        grade = "C";
+    }
+
+    // --- ส่วนการสร้าง Output สำหรับแสดงผลในหน้าเว็บ ---
+    var strOUTPUT = "--- ผลการเรียน ---<br>";
+    strOUTPUT += `Score: ${score}<br>`;
+    strOUTPUT += `Grade: ${grade}<br>`;
+
+    // นำข้อมูลไปแสดงที่ DIV id="output"
+    document.getElementById("output").innerHTML = strOUTPUT;
+
+    // --- ส่วนการแสดงผลใน Console ---
+    console.log(`Score: ${score}`);
+    console.log(`Grade: ${grade}`);
+    </script>
+
+</body>
+</html>
